@@ -14,7 +14,7 @@
 
     <script>
       function init() {
-        var myLatlng = new google.maps.LatLng(34.04, -118.24);
+        var myLatlng = new google.maps.LatLng(28.931172, 99.798435);
         var myOptions = {
           zoom: 13,
           center: myLatlng,
@@ -38,7 +38,11 @@
         marker.setDraggable(true);
 
         var map2 = new google.maps.Map(document.getElementById('map2'), myOptions);
-
+        var ctaLayer = new google.maps.KmlLayer({
+          url: 'file:///C:/Martin_Docs/Ekskurzii/China_201408/China2014_Places_BG.kml',
+          map: map2
+        });
+        
         var changeAlign = document.getElementById('change-align');
         google.maps.event.addDomListener(changeAlign, 'click', function() {
           mapLabel.set('align', document.getElementById('align').value);
